@@ -1,0 +1,150 @@
+body {
+    background-color: #000; /* Fondo negro para que no brille de más en la TV */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif; /* Elegimos una fuente con serif para un toque clásico */
+}
+
+body {
+    background-color: #000; /* Fondo negro de seguridad */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.main-canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Manejo de las transiciones suave (Fade) */
+.ricky-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d2e1f; /* Verde Bosque RICKY PAN */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s;
+    padding: 2rem 5rem;
+}
+
+.ricky-panel.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Diseño del Logo Premium */
+.header-section {
+    text-align: center;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid #d4af37; /* Línea divisoria dorada */
+    margin-bottom: 3rem;
+}
+
+.ricky-logo-premium {
+    display: inline-block;
+    color: #d4af37; /* Dorado RICKY PAN */
+    border: 3px solid #d4af37;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.wheat-icon { font-size: 2rem; margin-right: 0.5rem; }
+
+.ricky-logo-premium h1 {
+    display: inline;
+    font-size: 4rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.tagline {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: -5px;
+    color: #f5eeda; /* Crema suave */
+    font-style: italic;
+}
+
+/* Distribución Premium de Contenido */
+.premium-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: calc(100% - 150px);
+}
+
+.menu-list {
+    width: 58%;
+}
+
+.menu-list h2 {
+    font-size: 3rem;
+    color: #d4af37; /* Título dorado de categoría */
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+}
+
+.pastry-h2 { color: #f5eeda; } /* Título crema para pastelería */
+
+.ricky-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed rgba(255,255,255,0.3);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.pastry-item { border-bottom: 2px dashed rgba(245, 238, 218, 0.3); }
+
+.product-name {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #ffffff; /* Nombre del producto blanco */
+}
+
+.product-price {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #0d2e1f; /* Precio oscuro dentro de burbuja */
+    background-color: #d4af37; /* Burbuja dorada premium */
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.image-showcase {
+    width: 38%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.image-showcase img {
+    max-width: 100%;
+    border-radius: 15px;
+    border: 5px solid #d4af37; /* Marco dorado para la foto */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+/* Estilos para el video local */
+.video-local {
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    border: 5px solid #d4af37; /* Mantiene el marco dorado premium */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    object-fit: cover; /* Asegura que el video llene bien el espacio */
