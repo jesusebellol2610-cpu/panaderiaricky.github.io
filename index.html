@@ -7,85 +7,187 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-btn" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <nav class="sidebar-links">
+            <div class="sidebar-header">RICKY MENU</div>
+            <a href="#" onclick="cambiarArea('panaderia')">🍞 Panadería</a>
+            <a href="#" onclick="cambiarArea('pasteleria')">🍰 Pastelería</a>
+            <a href="#" onclick="cambiarArea('charcuteria')">🧀 Charcutería</a>
+            <a href="#" onclick="cambiarArea('loncheria')">🥪 Lonchería</a>
+            <a href="#" onclick="cambiarArea('videos')">🎬 Videos</a>
+        </nav>
+    </div>
+
     <div class="main-canvas">
-        
-        <section id="panaderia" class="ricky-panel active">
-            <div class="header-section">
-                <div class="ricky-logo-premium">
-                    <span class="wheat-icon">🌾</span>
-                    <h1>RICKY PAN</h1>
-                    <span class="tagline">PANADERÍA DESDE SIEMPRE</span>
-                </div>
-            </div>
-            
-            <div class="premium-layout">
-                <div class="menu-list">
-                    <h2>PAN ARTESANAL</h2>
-                    <div class="ricky-item">
-                        <span class="product-name">PAN CANILLA (RECIÉN HORNEADO)</span>
-                        <span class="product-price">1,99</span>
-                    </div>
-                    <div class="ricky-item">
-                        <span class="product-name">PAN DE JAMON (TRADICIONAL)</span>
-                        <span class="product-price">18,50</span>
-                    </div>
-                    <div class="ricky-item">
-                        <span class="product-name">CACHITOS DE JAMÓN Y QUESO</span>
-                        <span class="product-price">3,20</span>
-                    </div>
-                    <div class="ricky-item">
-                        <span class="product-name">PAN GALLEGO</span>
-                        <span class="product-price">5,10</span>
-                    </div>
-                </div>
-           <div class="image-showcase">
-    <img src="https://github.com/jesusebellol2610-cpu/panaderiaricky.github.io/blob/main/img/Image.png?raw=true" alt="Pan Artesanal Ricky">
-</div>
+        <section class="ricky-panel" data-area="panaderia">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">PANADERÍA TRADICIONAL</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>PAN ARTESANAL</h2>
+            <div class="ricky-item"><span class="product-name">PAN CANILLA</span><span class="product-price">1,99</span></div>
+            <div class="ricky-item"><span class="product-name">CACHITOS</span><span class="product-price">3,20</span></div>
+            <div class="ricky-item"><span class="product-name">PAN GALLEGO</span><span class="product-price">2,50</span></div>
+        </div>
+        <div class="image-showcase">
+            <img src="https://github.com/jesusebellol2610-cpu/panaderiaricky.github.io/blob/main/img/Image.png?raw=true" alt="Pan">
+        </div>
+    </div>
+</section>
 
-<!--<div class="image-showcase">
-    <video autoplay muted loop playsinline class="video-local">
-        <source src="video/VID.mp4" type="video/mp4">
-        Tu navegador no soporta videos.
-    </video>
-</div>-->
-            </div>
-        </section>
+<section class="ricky-panel" data-area="panaderia">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">ESPECIALIDADES DE LA CASA</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>PANES SELECTOS</h2>
+            <div class="ricky-item"><span class="product-name">CAMPESINO</span><span class="product-price">2,00</span></div>
+            <div class="ricky-item"><span class="product-name">PAN SOBAO</span><span class="product-price">1,80</span></div>
+            <div class="ricky-item"><span class="product-name">PAN FRANCÉS</span><span class="product-price">0,50</span></div>
+            <div class="ricky-item"><span class="product-name">PAN ANDINO</span><span class="product-price">2,50</span></div>
+            <div class="ricky-item"><span class="product-name">PAN DE FRUTA</span><span class="product-price">3,00</span></div>
+            <div class="ricky-item"><span class="product-name">PAN DE QUESO</span><span class="product-price">3,50</span></div>
+        </div>
+        <div class="image-showcase">
+            <img src="https://github.com/jesusebellol2610-cpu/panaderiaricky.github.io/blob/main/img/Image.png?raw=true" alt="Pan Especial">
+        </div>
+    </div>
+</section>
 
-        <section id="pasteleria" class="ricky-panel">
-            <div class="header-section">
-                <div class="ricky-logo-premium">
-                    <span class="wheat-icon">🎂</span>
-                    <h1>RICKY PAN</h1>
-                    <span class="tagline">PASTELERÍA FINA</span>
-                </div>
-            </div>
-            
-            <div class="premium-layout">
-                <div class="menu-list">
-                    <h2 class="pastry-h2">DULCES Y PASTELES</h2>
-                    <div class="ricky-item pastry-item">
-                        <span class="product-name">BOMBAS DE CREMA</span>
-                        <span class="product-price">2,75</span>
-                    </div>
-                    <div class="ricky-item pastry-item">
-                        <span class="product-name">GOLFEADOS CON QUESO</span>
-                        <span class="product-price">4,00</span>
-                    </div>
-                    <div class="ricky-item pastry-item">
-                        <span class="product-name">MILHOJAS TRADICIONAL</span>
-                        <span class="product-price">3,90</span>
-                    </div>
-                    <div class="ricky-item pastry-item">
-                        <span class="product-name">PASTEL DE CUMPLEAÑOS</span>
-                        <span class="product-price">Consultar</span>
-                    </div>
-                </div>
-          <div class="image-showcase">
-    <img src="https://github.com/jesusebellol2610-cpu/panaderiaricky.github.io/blob/main/img/Image2.png?raw=true" alt="Pan Artesanal Ricky">
-</div>
-            </div>
-        </section>
-        
+        <section class="ricky-panel" data-area="pasteleria">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">PASTELERÍA FINA</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>DULCES TENTACIONES</h2>
+            <div class="ricky-item"><span class="product-name">PALMERA</span><span class="product-price">1,50</span></div>
+            <div class="ricky-item"><span class="product-name">MILHOJA</span><span class="product-price">2,75</span></div>
+            <div class="ricky-item"><span class="product-name">PASTA SECA (KG)</span><span class="product-price">12,00</span></div>
+            <div class="ricky-item"><span class="product-name">PIE DE LIMÓN</span><span class="product-price">3,50</span></div>
+        </div>
+        <div class="image-showcase">
+            <img src="https://github.com/jesusebellol2610-cpu/panaderiaricky.github.io/blob/main/img/Image2.png?raw=true" alt="Pastelería">
+        </div>
+    </div>
+</section>
+
+<section class="ricky-panel" data-area="pasteleria">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">POSTRES Y TORTAS</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>PARA COMPARTIR</h2>
+            <div class="ricky-item"><span class="product-name">TORTA TRES LECHES</span><span class="product-price">4,50</span></div>
+            <div class="ricky-item"><span class="product-name">DONAS SURTIDAS</span><span class="product-price">1,00</span></div>
+            <div class="ricky-item"><span class="product-name">ECLAIRS</span><span class="product-price">2,20</span></div>
+            <div class="ricky-item"><span class="product-name">PROFITEROLES</span><span class="product-price">3,80</span></div>
+        </div>
+    </div>
+</section>
+
+        <section class="ricky-panel" data-area="charcuteria">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">CHARCUTERÍA NACIONAL</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>QUESOS Y JAMONES</h2>
+            <div class="ricky-item"><span class="product-name">JAMÓN AHUMADO</span><span class="product-price">12,50</span></div>
+            <div class="ricky-item"><span class="product-name">QUESO TIPO PARELA</span><span class="product-price">7,80</span></div>
+            <div class="ricky-item"><span class="product-name">QUESO AMARILLO</span><span class="product-price">14,00</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="ricky-panel" data-area="charcuteria">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">EMBUTIDOS SELECTOS</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>LÍNEA PREMIUM</h2>
+            <div class="ricky-item"><span class="product-name">SALAMI</span><span class="product-price">18,50</span></div>
+            <div class="ricky-item"><span class="product-name">CHORIZO ESPAÑOL</span><span class="product-price">15,20</span></div>
+            <div class="ricky-item"><span class="product-name">MORTADELA TAPARA</span><span class="product-price">6,40</span></div>
+        </div>
+    </div>
+</section>
+
+        <section class="ricky-panel" data-area="loncheria">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">PIZZAS ARTESANALES</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>NUESTRAS PIZZAS</h2>
+            <div class="ricky-item"><span class="product-name">PIZZA FAMILIAR</span><span class="product-price">15,00</span></div>
+            <div class="ricky-item"><span class="product-name">PIZZA GRANDE</span><span class="product-price">12,00</span></div>
+            <div class="ricky-item"><span class="product-name">PIZZA MEDIANA</span><span class="product-price">9,00</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="ricky-panel" data-area="loncheria">
+    <div class="header-section">
+        <div class="ricky-logo-premium">
+            <h1>RICKY PAN</h1>
+            <span class="tagline">SNACKS Y MÁS</span>
+        </div>
+    </div>
+    <div class="premium-layout">
+        <div class="menu-list">
+            <h2>LONCHERÍA CALIENTE</h2>
+            <div class="ricky-item"><span class="product-name">HAMBURGUESA CLÁSICA</span><span class="product-price">6,50</span></div>
+            <div class="ricky-item"><span class="product-name">CLUB HOUSE</span><span class="product-price">8,00</span></div>
+            <div class="ricky-item"><span class="product-name">PASTELITOS</span><span class="product-price">1,20</span></div>
+        </div>
+    </div>
+</section>
+
+        <section class="ricky-panel" data-area="videos">
+    <div class="video-full-container">
+         <video autoplay muted loop playsinline class="video-local-full">
+            <source src="video/VID1.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<section class="ricky-panel" data-area="videos">
+    <div class="video-full-container">
+         <video autoplay muted loop playsinline class="video-local-full">
+            <source src="video/VID2.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
     </div>
 
     <script src="script.js"></script>

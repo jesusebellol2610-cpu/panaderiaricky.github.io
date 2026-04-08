@@ -1,17 +1,60 @@
-// Obtenemos todas las secciones del menú RICKY PAN
-const seccionesRicky = document.querySelectorAll('.ricky-panel');
-let indiceRicky = 0;
+let areaActiva = 'panaderia';
+let intervaloRotacion;
+let timeoutCierreMenu;
 
-function rotarMenuRicky() {
-    // 1. Ocultamos el panel actual
-    seccionesRicky[indiceRicky].classList.remove('active');
+window.onload = () => {
+    cambiarArea('panaderia'); // Carga inicial
+};
+
+function cambiarArea(nombreArea) {
+    areaActiva = nombreArea;
+    clearInterval(intervaloRotacion); // Detener cualquier rotación previa
     
-    // 2. Pasamos al siguiente índice
-    indiceRicky = (indiceRicky + 1) % seccionesRicky.length;
+    const todas = document.querySelectorAll('.ricky-panel');
+    todas.forEach(p => {
+        p.classList.remove('active');
+        p.style.display = 'none';
+    });
+
+    const laminasArea = document.querySelectorAll(`.ricky-panel[data-area="${nombreArea}"]`);
     
-    // 3. Mostramos el nuevo panel
-    seccionesRicky[indiceRicky].classList.add('active');
+    if (laminasArea.length > 0) {
+        let indiceInterno = 0;
+        mostrarLamina(laminasArea, indiceInterno);
+
+        // Si hay más de una lámina en esta categoría, rotar cada 8 segundos
+        if (laminasArea.length > 1) {
+            intervaloRotacion = setInterval(() => {
+                laminasArea[indiceInterno].classList.remove('active');
+                setTimeout(() => {
+                    laminasArea[indiceInterno].style.display = 'none';
+                    indiceInterno = (indiceInterno + 1) % laminasArea.length;
+                    mostrarLamina(laminasArea, indiceInterno);
+                }, 1000); // Duración de la transición de opacidad
+            }, 8000);
+        }
+    }
+
+    // Al seleccionar, cerrar el menú lateral
+    document.getElementById('sidebar').classList.remove('active');
+    clearTimeout(timeoutCierreMenu);
 }
 
-// Activa la rotación automática cada 7 segundos (7000 milisegundos)
-setInterval(rotarMenuRicky, 7000);
+function mostrarLamina(grupo, indice) {
+    grupo[indice].style.display = 'block';
+    setTimeout(() => {
+        grupo[indice].classList.add('active');
+    }, 50);
+}
+
+function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+
+    if (sidebar.classList.contains('active')) {
+        clearTimeout(timeoutCierreMenu);
+        timeoutCierreMenu = setTimeout(() => {
+            sidebar.classList.remove('active');
+        }, 5000); // Autocierre en 5 segundos
+    }
+}

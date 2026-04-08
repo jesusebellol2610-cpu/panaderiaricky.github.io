@@ -1,18 +1,12 @@
-body {
-    background-color: #000; /* Fondo negro para que no brille de más en la TV */
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif; /* Elegimos una fuente con serif para un toque clásico */
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
-    background-color: #000; /* Fondo negro de seguridad */
+    background-color: #000;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -24,127 +18,174 @@ body {
     height: 100%;
 }
 
-/* Manejo de las transiciones suave (Fade) */
 .ricky-panel {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0d2e1f; /* Verde Bosque RICKY PAN */
+    background-color: #0d2e1f;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease-in-out, visibility 1s;
+    display: none;
+    transition: opacity 1s ease-in-out;
     padding: 2rem 5rem;
 }
 
 .ricky-panel.active {
     opacity: 1;
-    visibility: visible;
 }
 
-/* Diseño del Logo Premium */
+/* SIDEBAR RICKY PAN */
+.sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    width: 280px;
+    height: 100%;
+    background: rgba(13, 46, 31, 0.98);
+    border-right: 4px solid #d4af37;
+    transition: left 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: -70px;
+    top: 30px;
+    width: 55px;
+    height: 55px;
+    background: #d4af37;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+}
+
+.toggle-btn span {
+    width: 35px;
+    height: 5px;
+    background: #0d2e1f;
+    margin: 3px 0;
+}
+
+.sidebar-links {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-header {
+    color: #d4af37;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+}
+
+.sidebar-links a {
+    color: #f5eeda;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar-links a:hover {
+    background: #d4af37;
+    color: #0d2e1f;
+}
+
+/* CONTENIDO RESPONSIVE */
 .header-section {
     text-align: center;
-    padding-bottom: 3rem;
-    border-bottom: 2px solid #d4af37; /* Línea divisoria dorada */
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 1rem;
 }
-
-.ricky-logo-premium {
-    display: inline-block;
-    color: #d4af37; /* Dorado RICKY PAN */
-    border: 3px solid #d4af37;
-    padding: 1rem 3rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-.wheat-icon { font-size: 2rem; margin-right: 0.5rem; }
 
 .ricky-logo-premium h1 {
-    display: inline;
-    font-size: 4rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    color: #d4af37;
+    font-size: clamp(2rem, 8vw, 4rem);
 }
 
 .tagline {
-    display: block;
-    font-size: 1.5rem;
-    margin-top: -5px;
-    color: #f5eeda; /* Crema suave */
+    color: #f5eeda;
     font-style: italic;
+    font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
-/* Distribución Premium de Contenido */
 .premium-layout {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
-    height: calc(100% - 150px);
+    gap: 20px;
 }
 
 .menu-list {
-    width: 58%;
+    flex: 1;
+    min-width: 300px;
 }
 
 .menu-list h2 {
-    font-size: 3rem;
-    color: #d4af37; /* Título dorado de categoría */
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
+    color: #d4af37;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 1.5rem;
 }
 
-.pastry-h2 { color: #f5eeda; } /* Título crema para pastelería */
-
-.ricky-item {
+.ricky-item { 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px dashed rgba(255,255,255,0.3);
-    padding-bottom: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.3);
+    padding-bottom: 0.5rem;
 }
-
-.pastry-item { border-bottom: 2px dashed rgba(245, 238, 218, 0.3); }
 
 .product-name {
-    font-size: 2.3rem;
+    color: #fff;
+    font-size: clamp(1.2rem, 4vw, 2rem);
     font-weight: bold;
-    color: #ffffff; /* Nombre del producto blanco */
 }
 
-.product-price {
-    font-size: 2.3rem;
+.product-price { 
+    background: #d4af37;
+    color: #0d2e1f;
+    padding: 0.3rem 1.5rem; 
+    border-radius: 20px;
     font-weight: bold;
-    color: #0d2e1f; /* Precio oscuro dentro de burbuja */
-    background-color: #d4af37; /* Burbuja dorada premium */
-    padding: 0.5rem 2rem;
-    border-radius: 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
 .image-showcase {
-    width: 38%;
-    text-align: right;
+    flex: 0.8;
     display: flex;
-    align-items: center;
-    height: 100%;
+    justify-content: center;
 }
 
 .image-showcase img {
     max-width: 100%;
+    height: auto;
+    border: 4px solid #d4af37;
     border-radius: 15px;
-    border: 5px solid #d4af37; /* Marco dorado para la foto */
-    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
 }
 
-/* Estilos para el video local */
-.video-local {
-    width: 80%;
-    height: auto;
-    border-radius: 15px;
-    border: 5px solid #d4af37; /* Mantiene el marco dorado premium */
-    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-    object-fit: cover; /* Asegura que el video llene bien el espacio */
+/* AJUSTES PARA MÓVILES */
+@media (max-width: 768px) {
+    .premium-layout { flex-direction: column; align-items: center; }
+    .menu-list { width: 100%; }
+    .ricky-panel { padding: 1rem; overflow-y: auto; }
+}
+
+/* VIDEO */
+.video-full-container { height: 100%; display: flex; justify-content: center; align-items: center; }
+.video-local-full { width: 90%; max-height: 80vh; border: 5px solid #d4af37; border-radius: 15px; object-fit: cover; }
